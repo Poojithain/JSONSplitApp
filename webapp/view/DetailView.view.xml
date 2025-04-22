@@ -1,0 +1,87 @@
+<mvc:View controllerName="app.splitapp.controller.DetailView"
+    xmlns:mvc="sap.ui.core.mvc"
+    xmlns="sap.m"
+    xmlns:f="sap.ui.layout.form" 
+    xmlns:comp="sap.ui.comp.filterbar"
+    >
+<Page title="DetailView" showNavButton="true" navButtonPress="onListView">
+			<content>
+              <f:SimpleForm >
+			 <Label text="tools name" design="Bold"> </Label>
+							<Text text="{ToolModel>toolsName}"></Text>
+					
+								<Label text="tools price " design="Bold"></Label>
+							<Text text="{ToolModel>price}"></Text>
+							
+				 </f:SimpleForm>
+				 <IconTabBar>
+                    <items>
+ 
+                      <IconTabFilter icon="sap-icon://information">
+                           <VBox >
+                              <HBox >
+                                    <Label text="tools Name"  design="Bold" class="bold-class" ></Label>
+                                    <Text text="{ToolModel>toolsName}"></Text>
+                              </HBox>
+                              <HBox >
+                                    <Label text="Weight" design="Bold"></Label>
+                                    <Text text="{ToolModel>weight}"></Text>
+                              </HBox>
+                              <HBox >
+                                    <Label text="Warranty" design="Bold"></Label>
+                                    <Text text="{ToolModel>warranty}"></Text>
+                              </HBox>
+                             
+                           </VBox>
+                      </IconTabFilter>
+                      <!-- <comp:FilterBar>
+                        <comp:FilterItem>
+                        
+                        </comp:FilterItem>
+                      </comp:FilterBar> -->
+
+                    
+ 
+                      <IconTabFilter icon="sap-icon://supplier">
+                      <Label text="Supplier Name"></Label>
+                        <Input id="idInputSupp" width="200px" liveChange="onFilter">
+                      </Input>
+                      <Label text="Supplier City"></Label>
+                       <Input id="idInputCity" width="200px" liveChange="onFilter">
+                        </Input>
+                          <Table items="{ToolModel>/supplierSet}" id="idMTable">
+                             <columns>
+                                <Column>
+                                   <Text text="Tools Name"></Text>
+                                </Column>
+                                <Column>
+                                    <Text text="Supplier Name"></Text>
+                                 </Column>
+                                <Column>
+                                    <Text text="Contact"></Text>
+                                  </Column>
+                                  <Column>
+                                    <Text text="Location"></Text>
+                                  </Column>
+                             </columns>
+ 
+                             <ColumnListItem >
+                                  <cells>
+                                    <Text text="{ToolModel>toolsName}"></Text>
+                                    <Input value="{ToolModel>supplierName}" showValueHelp="true" valueHelpRequest = "onF4Help"></Input>
+                                    <Text text="{ToolModel>contact}"></Text>
+                                      <Text text="{ToolModel>location}"></Text>
+                                  </cells>
+                             </ColumnListItem>
+                          </Table>
+ 
+ 
+                      </IconTabFilter>
+                    </items>
+                </IconTabBar>
+
+					
+		
+				</content>
+			</Page>
+</mvc:View>

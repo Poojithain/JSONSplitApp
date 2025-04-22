@@ -1,0 +1,8 @@
+<mvc:View controllerName="app.splitapp.controller.EmptyView"
+    xmlns:mvc="sap.ui.core.mvc"
+    xmlns:m="sap.m">
+
+<Page title="Empty View">
+
+</Page>
+</mvc:View>

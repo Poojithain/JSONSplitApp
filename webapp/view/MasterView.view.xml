@@ -1,0 +1,38 @@
+<mvc:View controllerName="app.miningjsonproject.controller.CompanyView"
+    xmlns:mvc="sap.ui.core.mvc"
+    xmlns="sap.m">
+    
+    <Page title="Mining Locations">
+        <headerContent>
+            <Button icon="sap-icon://sort" tooltip="Sort" press="onSort"/>
+            <Button icon="sap-icon://action" tooltip="Share" press="onDetailView"/>
+        </headerContent>
+        <subHeader>
+            <OverflowToolbar>
+                <SearchField search="onSearch" liveChange="onSearch"/>
+            </OverflowToolbar>
+        </subHeader>
+        <content>
+            <List items="{MiningModel>/locations}" id="locationList" mode="SingleSelectMaster" selectionChange="onItemSelect">
+                <items>
+                    <ObjectListItem title="{MiningModel>name}" number="{MiningModel>details/cost}" numberUnit="USD">
+                        <attributes>
+                            <ObjectAttribute text="{MiningModel>details/resources}" title="Resources"/>
+                            <ObjectAttribute text="{MiningModel>details/man_days}" title="Man Days"/>
+                            <ObjectAttribute text="{MiningModel>details/probability_of_positive_outcome}" title="Probability of Positive Outcome"/>
+                        </attributes>
+                        <firstStatus>
+                            <ObjectStatus text="Active" state="Success"/>
+                        </firstStatus>
+                    </ObjectListItem>
+                </items>
+            </List>
+        </content>
+        <footer>
+            <OverflowToolbar>
+                <ToolbarSpacer/>
+                <Button text="Create" press="onCreatePress"/>
+            </OverflowToolbar>
+        </footer>
+    </Page>
+</mvc:View>

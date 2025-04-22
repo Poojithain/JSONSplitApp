@@ -1,0 +1,16 @@
+<mvc:View controllerName="app.splitapp.controller.FormView"
+    xmlns:mvc="sap.ui.core.mvc"
+    xmlns="sap.m"
+    xmlns:f="sap.ui.layout.form" 
+    >
+<Page title="DetailView" showNavButton="true" navButtonPress="onListView">
+			<content>
+        <f:SimpleForm >
+        <Label text="Name" ></Label>
+        <Input></Input>
+        </f:SimpleForm>
+					
+		
+				</content>
+			</Page>
+</mvc:View>
